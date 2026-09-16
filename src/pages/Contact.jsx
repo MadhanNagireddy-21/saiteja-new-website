@@ -1,6 +1,11 @@
-import { useState } from "react";
 
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { useState } from "react";
+import {
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
 
 import Button from "../components/Button";
 import { CONTACT_DETAILS } from "../data/contact";
@@ -10,50 +15,85 @@ function Contact() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const handleNameInput = (event) => {
+    // Allow English letters and spaces only
+    event.target.value = event.target.value.replace(/[^A-Za-z ]/g, "");
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const form = event.currentTarget;
 
-    setIsSubmitting(true);
     setSuccessMessage("");
     setErrorMessage("");
 
     const formData = new FormData(form);
 
+    const name = formData.get("name")?.trim();
+    const email = formData.get("email")?.trim();
+    const subject = formData.get("subject")?.trim();
+    const message = formData.get("message")?.trim();
+
+    // Check all required fields
+    if (!name || !email || !subject || !message) {
+      setErrorMessage("Please fill in all required fields.");
+      return;
+    }
+
+    // Name validation
+    const namePattern = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+
+    if (!namePattern.test(name)) {
+      setErrorMessage(
+        "Name can contain letters and spaces only."
+      );
+      return;
+    }
+
     const contactData = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
+      name,
+      email,
+      subject,
+      message,
     };
 
     try {
-      const response = await fetch("http://localhost:8080/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(contactData),
-      });
+      setIsSubmitting(true);
+
+      const response = await fetch(
+        "http://localhost:8080/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(contactData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to submit contact message");
       }
 
       setSuccessMessage(
-        "Your message has been sent successfully. We'll get back to you soon.",
+        "Your message has been sent successfully. We'll get back to you soon."
       );
 
       setErrorMessage("");
 
       form.reset();
     } catch (error) {
-      console.error("Contact form submission error:", error);
+      console.error(
+        "Contact form submission error:",
+        error
+      );
 
       setSuccessMessage("");
 
-      setErrorMessage("Unable to send your message. Please try again later.");
+      setErrorMessage(
+        "Unable to send your message. Please try again later."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -61,9 +101,12 @@ function Contact() {
 
   return (
     <main className="contact-page">
+
       {/* HERO */}
       <section className="contact-hero">
-        <div className="section-label">CONTACT US</div>
+        <div className="section-label">
+          CONTACT US
+        </div>
 
         <h1>
           Let's start
@@ -71,15 +114,21 @@ function Contact() {
         </h1>
 
         <p>
-          Have a question, project, hiring requirement or partnership idea? We'd
-          love to hear from you.
+          Have a question, project, hiring requirement or
+          partnership idea? We'd love to hear from you.
         </p>
       </section>
 
+
       {/* CONTACT CONTENT */}
       <section className="contact-main">
+
+        {/* CONTACT INFORMATION */}
         <div className="contact-information">
-          <div className="section-label">GET IN TOUCH</div>
+
+          <div className="section-label">
+            GET IN TOUCH
+          </div>
 
           <h2>
             Tell us what
@@ -87,11 +136,13 @@ function Contact() {
           </h2>
 
           <p>
-            Share a little about what you need and our team can help you
-            identify the right next step.
+            Share a little about what you need and our team
+            can help you identify the right next step.
           </p>
 
+
           <div className="contact-details">
+
             {/* EMAIL */}
             <a
               href={`mailto:${CONTACT_DETAILS.email}`}
@@ -101,9 +152,12 @@ function Contact() {
 
               <div>
                 <small>Email</small>
-                <span>{CONTACT_DETAILS.email}</span>
+                <span>
+                  {CONTACT_DETAILS.email}
+                </span>
               </div>
             </a>
+
 
             {/* PHONE */}
             <a
@@ -114,9 +168,12 @@ function Contact() {
 
               <div>
                 <small>Phone</small>
-                <span>{CONTACT_DETAILS.phoneDisplay}</span>
+                <span>
+                  {CONTACT_DETAILS.phoneDisplay}
+                </span>
               </div>
             </a>
+
 
             {/* WHATSAPP */}
             <a
@@ -129,9 +186,12 @@ function Contact() {
 
               <div>
                 <small>WhatsApp</small>
-                <span>Chat with our team</span>
+                <span>
+                  Chat with our team
+                </span>
               </div>
             </a>
+
 
             {/* ADDRESS */}
             <a
@@ -144,33 +204,63 @@ function Contact() {
 
               <div>
                 <small>Office</small>
-                <span>{CONTACT_DETAILS.address}</span>
+                <span>
+                  {CONTACT_DETAILS.address}
+                </span>
               </div>
             </a>
+
           </div>
         </div>
 
+
         {/* CONTACT FORM */}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form
+          className="contact-form"
+          onSubmit={handleSubmit}
+        >
+
+          {/* NAME + EMAIL */}
           <div className="form-row">
+
+            {/* NAME */}
             <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" required />
+              Name *
+              <span className="required"></span>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+                autoComplete="name"
+                onInput={handleNameInput}
+              />
             </label>
 
+
+            {/* EMAIL */}
             <label>
-              Email
+              Email *
+              <span className="required"> </span>
+
               <input
                 type="email"
                 name="email"
                 placeholder="you@example.com"
                 required
+                autoComplete="email"
               />
             </label>
+
           </div>
 
+
+          {/* SUBJECT */}
           <label>
-            Subject
+            Subject *
+            <span className="required"></span>
+
             <input
               type="text"
               name="subject"
@@ -179,8 +269,12 @@ function Contact() {
             />
           </label>
 
+
+          {/* MESSAGE */}
           <label>
-            Message
+            Message *
+            <span className="required"></span>
+
             <textarea
               name="message"
               rows="6"
@@ -189,21 +283,49 @@ function Contact() {
             />
           </label>
 
+
+          {/* SUCCESS MESSAGE */}
           {successMessage && (
-            <p className="contact-success">{successMessage}</p>
+            <p
+              className="contact-success"
+              role="status"
+            >
+              {successMessage}
+            </p>
           )}
 
-          {errorMessage && <p className="contact-error">{errorMessage}</p>}
 
-          <Button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send Message"}
+          {/* ERROR MESSAGE */}
+          {errorMessage && (
+            <p
+              className="contact-error"
+              role="alert"
+            >
+              {errorMessage}
+            </p>
+          )}
+
+
+          {/* SUBMIT */}
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting
+              ? "Sending..."
+              : "Send Message"}
           </Button>
+
         </form>
+
       </section>
+
 
       {/* MAP */}
       <section className="map-section">
+
         <div className="contact-map">
+
           <iframe
             title="Saiteja Infotech Office Location"
             src={CONTACT_DETAILS.mapEmbedUrl}
@@ -211,10 +333,14 @@ function Contact() {
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
           />
+
         </div>
+
       </section>
+
     </main>
   );
 }
 
 export default Contact;
+
