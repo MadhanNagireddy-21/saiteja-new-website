@@ -224,215 +224,124 @@ function Home() {
 
             
     
-      {/* WHAT OUR CLIENTS SAY SECTION */}
-      <section
-        className="client-reviews-section"
-        style={{
-          padding: '90px 20px',
-          backgroundColor: '#ffffff'
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1250px',
-            margin: '0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            gap: '30px'
-          }}
-        >
-
-          {/* LEFT SIDE CONTENT */}
-          <div style={{
-            flex: '1 1 300px',
-            textAlign: 'left'
+          
+      {/* NEW BRANDED TESTIMONIALS SECTION - 5 PERMANENT STATIC REVIEWS */}
+      <section style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        padding: '80px max(40px, 8%)',
+        fontFamily: 'sans-serif',
+        backgroundColor: '#fff',
+        gap: '50px',
+        flexWrap: 'wrap',
+        maxWidth: '1300px',
+        margin: '0 auto'
+      }}>
+        {/* Left Side: Title and CTA Link */}
+        <div style={{ flex: '1', minWidth: '300px', textAlign: 'left' }}>
+          <span style={{
+            color: '#ff7a00',
+            fontSize: '0.8rem',
+            fontWeight: 'bold',
+            letterSpacing: '1px',
+            display: 'block',
+            marginBottom: '15px'
+          }}>WHAT OUR CLIENTS SAY</span>
+          <h2 style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            color: '#0f172a',
+            lineHeight: '1.2',
+            margin: '0 0 20px 0'
+          }}>Trusted by<br />innovative<br />companies<br />worldwide.</h2>
+          <p style={{
+            color: '#64748b',
+            fontSize: '0.95rem',
+            lineHeight: '1.6',
+            marginBottom: '35px',
+            maxWidth: '340px'
           }}>
+            Your Experience inspires us to deliver better technology solutions and create lasting partnerships.
+          </p>
+          <Link to="/contact" style={{
+            backgroundColor: '#ff7a00',
+            color: '#fff',
+            textDecoration: 'none',
+            padding: '14px 28px',
+            fontSize: '0.95rem',
+            fontWeight: 'bold',
+            borderRadius: '8px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            boxShadow: '0 4px 14px rgba(255, 122, 0, 0.35)',
+          }}>
+            Share Your Experience <ArrowRight size={16} />
+          </Link>
+        </div>
 
-            <div style={{
-              color: '#ff7a00',
-              fontSize: '0.95rem',
-              fontWeight: 'bold',
-              letterSpacing: '1px',
-              marginBottom: '18px'
-            }}>
-              WHAT OUR CLIENTS SAY
-            </div>
-
-            <h2 style={{
-              fontSize: '2.7rem',
-              fontWeight: 'bold',
-              lineHeight: '1.2',
-              color: '#111827',
-              marginBottom: '20px'
-            }}>
-              Trusted by innovative companies worldwide.
-            </h2>
-
-            <p style={{
-              color: '#64748b',
-              fontSize: '1.1rem',
-              lineHeight: '1.6',
-              marginBottom: '30px'
-            }}>
-              Your Experience inspires us to deliver better
-              technology solutions and create lasting partnerships.
+        {/* Right Side: Direct Static 5 Reviews Grid */}
+        <div style={{
+          flex: '2',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
+          gap: '24px',
+          minWidth: '320px',
+          width: '100%',
+          alignItems: 'stretch'
+        }}>
+          
+           {/* Card 1: Mohan Kumar */}
+          <div style={{ backgroundColor: '#fff', borderRadius: '16px', padding: '32px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f1f5f9', borderBottom: '4px solid #ff7a00', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'left' }}>
+            <p style={{ color: '#334155', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 24px 0' }}>
+              "Saiteja Infotech provides excellent IT services with a professional and supportive team. Their solutions are reliable, innovative, and delivered with great attention to quality. I truly appreciate their commitment and customer service. Highly recommended!"
             </p>
-
-            <Link
-              to="/contact"
-              style={{
-                backgroundColor: '#ff7a00',
-                color: '#ffffff',
-                padding: '17px 30px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                borderRadius: '10px',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                boxShadow: '0 5px 18px rgba(255,122,0,0.25)',
-                transition: '0.3s ease'
-              }}
-              onMouseOver={(e) =>
-                e.currentTarget.style.backgroundColor = '#e66d00'
-              }
-              onMouseOut={(e) =>
-                e.currentTarget.style.backgroundColor = '#ff7a00'
-              }
-            >
-              Share Your Experience
-              <ArrowRight size={18} />
-            </Link>
-
+            <div>
+              <div style={{ height: '1px', backgroundColor: '#f1f5f9', width: '100%', marginBottom: '16px' }}></div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#0f172a', margin: '0 0 4px 0' }}>Mohan Kumar</h4>
+              <span style={{ color: '#ff7a00', fontSize: '0.8rem', fontWeight: '600' }}>paxsat</span>
+            </div>
           </div>
 
-          {/* RIGHT SIDE - CLIENT REVIEW CARDS */}
-          <div style={{
-            flex: '2 1 550px',
-            minWidth: 0
-          }}>
+          {/* Card 2: Preethi Reddy */}
+          <div style={{ backgroundColor: '#fff', borderRadius: '16px', padding: '32px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f1f5f9', borderBottom: '4px solid #ff7a00', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'left' }}>
+            <p style={{ color: '#334155', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 24px 0' }}>
+              "We had a great experience working with Saiteja Infotech. Their team understood our business requirements and delivered a reliable software solution. Their technical support and dedication were impressive."
+            </p>
+            <div>
+              <div style={{ height: '1px', backgroundColor: '#f1f5f9', width: '100%', marginBottom: '16px' }}></div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#0f172a', margin: '0 0 4px 0' }}>Preethi Reddy</h4>
+              <span style={{ color: '#ff7a00', fontSize: '0.8rem', fontWeight: '600' }}>Managing Director</span>
+            </div>
+          </div>
 
-            {reviews.length === 0 ? (
+          {/* Card 3: Manoj Kumar */}
+          <div style={{ backgroundColor: '#fff', borderRadius: '16px', padding: '32px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f1f5f9', borderBottom: '4px solid #ff7a00', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'left' }}>
+            <p style={{ color: '#334155', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 24px 0' }}>
+              "Saiteja Infotech helped us improve our business operations through their technology solutions. Their support and innovative approach made our work easier and more efficient. We appreciate their commitment and professionalism."
+            </p>
+            <div>
+              <div style={{ height: '1px', backgroundColor: '#f1f5f9', width: '100%', marginBottom: '16px' }}></div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#0f172a', margin: '0 0 4px 0' }}>Manoj Kumar</h4>
+              <span style={{ color: '#ff7a00', fontSize: '0.8rem', fontWeight: '600' }}>Business Owner</span>
+            </div>
+          </div>
 
-              <div style={{
-                padding: '50px 25px',
-                textAlign: 'center',
-                backgroundColor: '#f9fafb',
-                border: '1px solid #e5e7eb',
-                borderRadius: '18px'
-              }}>
-                <div style={{
-                  fontSize: '3rem',
-                  color: '#ff7a00',
-                  marginBottom: '15px'
-                }}>
-                
-                </div>
-
-                <h3 style={{
-                  color: '#111827',
-                  fontSize: '1.3rem',
-                  marginBottom: '10px'
-                }}>
-                  Your Experience Matters!
-                </h3>
-
-                <p style={{
-                  color: '#64748b',
-                  margin: 0
-                }}>
-                 Share your experience and help us improve.
-                </p>
-              </div>
-
-            ) : (
-
-              <div style={{
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-  gap: '12px',
-  alignItems: 'start'
-}}>
-
-                {reviews.map((rev, index) => (
-
-                  <div
-                    key={index}
-                    style={{
-                      backgroundColor: '#ffffff',
-                      padding: '22px',
-                      borderRadius: '18px',
-                      border: '1px solid #e5e7eb',
-                      borderBottom: '4px solid #ff7a00',
-                      boxShadow: '0 8px 30px rgba(0,0,0,0.06)',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-6px)';
-                      e.currentTarget.style.boxShadow =
-                        '0 14px 35px rgba(0,0,0,0.10)';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow =
-                        '0 8px 30px rgba(0,0,0,0.06)';
-                    }}
-                  >
-
-                   
-
-                    {/* REVIEW TEXT */}
-                    <p style={{
-                      color: '#334155',
-                      fontSize: '1rem',
-                      lineHeight: '1.7',
-                      marginBottom: '20px',
-                      overflowWrap: 'anywhere'
-                    }}>
-                      {rev.review}
-                    </p>
-
-                    {/* CLIENT NAME */}
-                    <div style={{
-                      borderTop: '1px solid #f1f5f9',
-                      paddingTop: '18px'
-                    }}>
-                      <h4 style={{
-                        color: '#111827',
-                        fontSize: '1.15rem',
-                        fontWeight: 'bold',
-                        margin: 0
-                      }}>
-                        {rev.name}
-                      </h4>
-
-                      <p style={{
-                        color: '#ff7a00',
-                        fontSize: '0.85rem',
-                        marginTop: '6px',
-                        fontWeight: '600'
-                      }}>
-                         {rev.designation || "Client Partner"}
-                      </p>
-                    </div>
-
-                  </div>
-
-                ))}
-
-              </div>
-            )}
-
-
-     
+          {/* Card 4: Rajesh Sharma */}
+          <div style={{ backgroundColor: '#fff', borderRadius: '16px', padding: '32px', boxShadow: '0 10px 30px rgba(0,0,0,0.04)', border: '1px solid #f1f5f9', borderBottom: '4px solid #ff7a00', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'left' }}>
+            <p style={{ color: '#334155', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 24px 0' }}>
+              "Their web development support was exceptional. The custom workflow applications built by their developers significantly optimized our digital infrastructure and saved us countess operation hours."
+            </p>
+            <div>
+              <div style={{ height: '1px', backgroundColor: '#f1f5f9', width: '100%', marginBottom: '16px' }}></div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#0f172a', margin: '0 0 4px 0' }}>Rajesh Sharma</h4>
+              <span style={{ color: '#ff7a00', fontSize: '0.8rem', fontWeight: '600' }}>Operations Manager</span>
+            </div>
           </div>
 
         </div>
       </section>
-
-
         {/* CAREERS */}
       <section className="careers-section" id="careers">
         <div className="careers-grid">
