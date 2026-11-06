@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact")
@@ -17,6 +18,12 @@ public class ContactMessageController {
     public ContactMessageController(
             ContactMessageService contactMessageService) {
         this.contactMessageService = contactMessageService;
+    }
+    @GetMapping("/reviews")
+    public ResponseEntity<List<ContactMessage>> getAllReviews() {
+  List<ContactMessage> reviews = contactMessageService.getAllMessages();
+
+        return ResponseEntity.ok(reviews);
     }
 
     @PostMapping
