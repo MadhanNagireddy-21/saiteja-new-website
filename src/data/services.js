@@ -1,14 +1,13 @@
-
 import { Code2, BrainCircuit, Cloud } from "lucide-react";
 
-import softwareImage from "../assets/services/it-solutions.jpg";
-import itImage from "../assets/services/ai-data-solutions.jpg";
-import cloudImage from "../assets/services/hr-staffing.png";
+import softwareImage from "../assets/services/custom-development.jpg";
+import itImage from "../assets/services/web-development.jpg";
+import cloudImage from "../assets/services/app-development.jpg";
 import webAppImage from "../assets/services/branding-digital.jpg";
-import consultingImage from "../assets/services/training-development.jpg";
-import transformationImage from "../assets/services/ai-data-solutions.jpg";
-import hrmsImage from "../assets/services/hr-staffing.jpg";
-import cloudDevOpsImage from "../assets/services/it-solutions.jpg";
+import consultingImage from "../assets/services/it-consulting.jpg";
+import transformationImage from "../assets/services/digital-transformation.jpg";
+import hrmsImage from "../assets/services/hr-ms.jpg";
+import cloudDevOpsImage from "../assets/services/cloud-devops.jpg";
 
 const services = [
   {
@@ -23,7 +22,7 @@ const services = [
       "Scalable software solutions",
     ],
     description:
-      "We develop customized software applications designed to address business challenges, improve operational efficiency, and support business growth.",
+      "Off-the-shelf software rarely fits every part of your business, so we build tailored applications from the ground up. Our solutions automate repetitive tasks, eliminate daily bottlenecks, and scale smoothly as your company grows.",
     link: "/services/custom-software-development",
   },
   {
@@ -38,7 +37,7 @@ const services = [
       "Seamless user experiences",
     ],
     description:
-      "We design and develop responsive, user-friendly websites that strengthen your online presence and provide seamless experiences across devices.",
+      "We craft fast, responsive websites designed to captivate visitors and turn clicks into loyal customers. Enjoy a seamless, user-friendly experience that looks sharp, loads quickly, and performs smoothly on every screen.",
     link: "/services/website-development",
   },
   {
@@ -53,7 +52,7 @@ const services = [
       "Business process simplification",
     ],
     description:
-      "We build scalable and intuitive mobile applications that help businesses connect with customers and simplify everyday operations.",
+      "Put your business directly in your customers' pockets with fast, intuitive iOS and Android apps. We build scalable mobile solutions that boost user engagement and streamline your daily operations on the go.",
     link: "/services/mobile-application-development",
   },
   {
@@ -68,7 +67,7 @@ const services = [
       "Business process integration",
     ],
     description:
-      "We create secure, scalable web applications tailored to your business processes and operational requirements.",
+      "Power your daily operations with custom, browser-based applications built around your exact workflows. We engineer fast, secure, and scalable web apps that handle heavy workloads and simplify complex tasks.",
     link: "/services/web-application-development",
   },
   {
@@ -83,7 +82,7 @@ const services = [
       "Digital solutions planning",
     ],
     description:
-      "We provide technology consulting to help organizations identify suitable solutions, optimize IT infrastructure, and make informed technology decisions.",
+      "Cut through the tech noise with clear, practical guidance tailored to your business goals. We help you choose the right tools, optimize your IT setup, and make smart technology investments that pay off.",
     link: "/services/it-consulting",
   },
   {
@@ -98,7 +97,7 @@ const services = [
       "Operational improvement",
     ],
     description:
-      "We help businesses modernize their operations through digital solutions, workflow automation, and technology integration.",
+      "Leave outdated manual processes behind and upgrade how your entire business operates. We modernize your workflows by integrating smart digital tools and automation—boosting speed, accuracy, and daily productivity.",
     link: "/services/digital-transformation",
   },
   {
@@ -113,7 +112,7 @@ const services = [
       "HR operations management",
     ],
     description:
-      "We provide workforce management solutions that support employee management, attendance tracking, payroll processes, and HR operations.",
+      "Take the hassle out of managing your workforce with an all-in-one HR platform built for modern teams. Automate attendance tracking, simplify payroll, and streamline employee records so you focus on people, not paperwork.",
     link: "/services/hrms-solutions",
   },
   {
@@ -128,10 +127,9 @@ const services = [
       "DevOps practices",
     ],
     description:
-      "We support cloud infrastructure, application deployment, automation, and DevOps practices to improve application reliability and scalability.",
+      "Keep your applications fast, reliable, and ready to scale without infrastructure headaches. We streamline cloud migrations, automate deployments, and implement DevOps best practices for maximum uptime and effortless growth.",
     link: "/services/cloud-devops-solutions",
   },
-
 ];
 
 export default services;
