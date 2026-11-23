@@ -1,152 +1,46 @@
-
-import { CheckCircle2 } from "lucide-react";
-
-import Button from "../components/Button";
-import softwareImage from "../assets/services/it-solutions.jpg";
+import ServicePageTemplate from "./ServicePageTemplate";
+import softwareImage from "../assets/services/custom-development.jpg";
 
 const offerings = [
   {
     title: "Customized Software Solutions",
     description:
-      "Software applications developed according to your specific business requirements, goals and workflows.",
+      "Software applications developed according to your specific business requirements, goals and workflows. We build user-friendly, reliable systems tailored from scratch so your team gets the exact features needed without paying for unnecessary bloat.",
   },
   {
     title: "Business Process Automation",
     description:
-      "Automate repetitive tasks and business processes to improve productivity and reduce manual effort.",
+      "Automate repetitive tasks and business processes to improve productivity and reduce manual effort. By streamlining daily approvals, data entry, and routine alerts, your team saves valuable hours and minimizes human errors.",
   },
   {
     title: "Scalable Software Applications",
     description:
-      "Flexible software solutions designed to support your business as it grows and evolves.",
+      "Flexible software solutions designed to support your business as it grows and evolves. Built on modern architecture, these applications effortlessly handle increasing users, larger data volumes, and new feature additions without slowing down.",
   },
   {
     title: "Software Integration",
     description:
-      "Connect your software applications and business systems to improve data flow and operational efficiency.",
+      "Connect your software applications and business systems to improve data flow and operational efficiency. We bridge the gap between your CRM, ERP, payment gateways, and third-party tools so all your data syncs smoothly in real time.",
   },
 ];
 
 const benefits = [
-  "Solutions tailored to business requirements",
-  "Improved operational efficiency",
-  "Reduced manual work through automation",
-  "Scalable and flexible software solutions",
+  "100% custom-built around your unique business goals",
+  "Automates repetitive tasks to save hours every week",
+  "Built to scale smoothly as users and data grow",
+  "Enterprise-grade security with reliable ongoing support",
 ];
 
 export default function CustomSoftwareDevelopment() {
   return (
-    <main className="service-detail-page">
-
-      <section className="service-detail-hero">
-
-        <h1>Custom Software Development</h1>
-
-        <p>
-          Building customized software solutions to
-          solve business challenges and support growth.
-        </p>
-
-        <Button to="/contact">Enquire Now</Button>
-
-      </section>
-
-      <section className="service-detail-intro">
-
-        <img
-          src={softwareImage}
-          alt="Custom Software Development"
-        />
-
-        <div>
-
-          <div className="section-label">OVERVIEW</div>
-
-          <h2>Software designed around your business</h2>
-
-          <p>
-            We develop customized software applications
-            designed to address business challenges,
-            improve operational efficiency, and support
-            business growth. Our solutions are designed
-            around your business requirements and
-            operational needs.
-          </p>
-
-        </div>
-
-      </section>
-
-      <section className="service-detail-information">
-
-        <div className="service-detail-container">
-
-          <div className="section-label">WHAT WE OFFER</div>
-
-          <h2>Our Custom Software Development Services</h2>
-
-          <div className="service-detail-sections-grid">
-
-            {offerings.map((item, index) => (
-              <article
-                className="service-info-card"
-                key={item.title}
-              >
-                <span>0{index + 1}</span>
-
-                <h3>{item.title}</h3>
-
-                <p>{item.description}</p>
-              </article>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section className="service-detail-benefits">
-
-        <div className="service-detail-container">
-
-          <div className="section-label">
-            WHY CHOOSE US
-          </div>
-
-          <h2>Benefits of Custom Software Development</h2>
-
-          <div className="service-benefits-grid">
-
-            {benefits.map((benefit) => (
-              <div
-                className="service-benefit-item"
-                key={benefit}
-              >
-                <CheckCircle2 />
-                <span>{benefit}</span>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section className="service-detail-cta">
-
-        <h2>Have a software project in mind?</h2>
-
-        <p>
-          Tell us about your business requirements
-          and let's discuss the right software solution.
-        </p>
-
-        <Button to="/contact">Contact Us</Button>
-
-      </section>
-
-    </main>
+    <ServicePageTemplate
+      title="Custom Software Development"
+      subtitle="Building customized software solutions to solve business challenges and support growth."
+      image={softwareImage}
+      overviewTitle="Software designed around your business"
+      overview="Every growing business eventually hits a wall with generic, off-the-shelf software that forces teams to work around rigid templates. We partner with you to design, build, and deploy custom applications engineered around your exact business logic, existing tools, and future goals. From initial architecture and UI/UX design to testing, deployment, and ongoing support, we handle the entire development lifecycle—delivering secure, maintainable software that cuts manual effort and scales effortlessly as your operations expand."
+      offerings={offerings}
+      benefits={benefits}
+    />
   );
 }

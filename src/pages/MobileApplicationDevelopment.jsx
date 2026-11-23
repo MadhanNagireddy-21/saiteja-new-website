@@ -1,152 +1,46 @@
-
-import { CheckCircle2 } from "lucide-react";
-
-import Button from "../components/Button";
-import mobileImage from "../assets/services/hr-staffing.png";
+import ServicePageTemplate from "./ServicePageTemplate";
+import mobileImage from "../assets/services/app-development.jpg";
 
 const offerings = [
   {
     title: "Android Application Development",
     description:
-      "We build intuitive Android applications designed to meet business requirements and provide smooth experiences for users.",
+      "We build intuitive Android applications designed to meet business requirements and provide smooth experiences for users. Built for speed and wide device compatibility, our apps deliver reliable performance across smartphones and tablets.",
   },
   {
     title: "iOS Application Development",
     description:
-      "We develop user-friendly iOS applications that help businesses connect with customers through Apple mobile devices.",
+      "We develop user-friendly iOS applications that help businesses connect with customers through Apple mobile devices. Crafted with clean interfaces and smooth navigation, our apps offer a refined and secure user experience.",
   },
   {
     title: "Custom Mobile Applications",
     description:
-      "We create customized mobile applications tailored to specific business needs, workflows and customer requirements.",
+      "We create customized mobile applications tailored to specific business needs, workflows and customer requirements. From customer booking apps to internal team tools, every feature is designed to boost daily efficiency.",
   },
   {
     title: "Mobile App Integration",
     description:
-      "We integrate mobile applications with business systems and services to simplify operations and improve connectivity.",
+      "We integrate mobile applications with business systems and services to simplify operations and improve connectivity. Seamless API and payment gateway links keep your app data synced with your backend in real time.",
   },
 ];
 
 const benefits = [
-  "Better customer engagement",
-  "Convenient access to business services",
-  "Scalable and intuitive applications",
-  "Simplified everyday business operations",
+  "Fast, intuitive iOS and Android user experiences",
+  "Smooth real-time performance built for daily reliability",
+  "Seamless integration with payments and backend systems",
+  "Scalable app architecture ready for growing user traffic",
 ];
 
 export default function MobileApplicationDevelopment() {
   return (
-    <main className="service-detail-page">
-
-      <section className="service-detail-hero">
-
-        <h1>Mobile Application Development</h1>
-
-        <p>
-          Building intuitive and scalable mobile applications
-          that connect businesses with their customers.
-        </p>
-
-        <Button to="/contact">Enquire Now</Button>
-
-      </section>
-
-      <section className="service-detail-intro">
-
-        <img
-          src={mobileImage}
-          alt="Mobile Application Development"
-        />
-
-        <div>
-
-          <div className="section-label">OVERVIEW</div>
-
-          <h2>Mobile experiences built for your business</h2>
-
-          <p>
-            We build scalable and intuitive mobile applications
-            that help businesses connect with customers and
-            simplify everyday operations. Our focus is on
-            developing user-friendly mobile solutions that
-            support business requirements and improve
-            customer experiences.
-          </p>
-
-        </div>
-
-      </section>
-
-      <section className="service-detail-information">
-
-        <div className="service-detail-container">
-
-          <div className="section-label">WHAT WE OFFER</div>
-
-          <h2>Our Mobile Application Development Services</h2>
-
-          <div className="service-detail-sections-grid">
-
-            {offerings.map((item, index) => (
-              <article
-                className="service-info-card"
-                key={item.title}
-              >
-                <span>0{index + 1}</span>
-
-                <h3>{item.title}</h3>
-
-                <p>{item.description}</p>
-              </article>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section className="service-detail-benefits">
-
-        <div className="service-detail-container">
-
-          <div className="section-label">
-            WHY CHOOSE US
-          </div>
-
-          <h2>Benefits of Mobile Application Development</h2>
-
-          <div className="service-benefits-grid">
-
-            {benefits.map((benefit) => (
-              <div
-                className="service-benefit-item"
-                key={benefit}
-              >
-                <CheckCircle2 />
-                <span>{benefit}</span>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section className="service-detail-cta">
-
-        <h2>Have a mobile app idea?</h2>
-
-        <p>
-          Share your application requirements with our team
-          and let's discuss the right solution.
-        </p>
-
-        <Button to="/contact">Contact Us</Button>
-
-      </section>
-
-    </main>
+    <ServicePageTemplate
+      title="Mobile Application Development"
+      subtitle="Building intuitive and scalable mobile applications that connect businesses with their customers."
+      image={mobileImage}
+      overviewTitle="Mobile experiences built for your business"
+      overview="Today's customers expect instant access to your services right from their smartphones. We build native and cross-platform iOS and Android applications that blend intuitive interfaces with rock-solid backend performance, ensuring smooth navigation even under heavy usage. From customer-facing apps that drive engagement and repeat orders to internal field-force apps that simplify daily reporting, we take your mobile product from concept and prototype to App Store and Play Store launch."
+      offerings={offerings}
+      benefits={benefits}
+    />
   );
 }
