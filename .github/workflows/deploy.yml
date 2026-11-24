@@ -1,12 +1,16 @@
+
 name: Deploy Website to AWS
 
 on:
   push:
     branches:
-      - main  # Runs when code is pushed or a PR is merged into main
+      - main
 
 jobs:
   deploy:
+    # Deploy only from the original company repository
+    if: github.repository == 'Saiteja-Infotech-Private-Limited/saiteja-new-website'
+
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20' # Ensure this matches your project's node version
+          node-version: '20'
 
       - name: Install Dependencies
         run: npm install
